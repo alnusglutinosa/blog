@@ -1,0 +1,47 @@
++font('bebas-font', bebas-webfont)
++font('helvetic-font', helveticaneue)
+
+=bebas-font
+	font-family: bebas-font,sans-serif
+
+=helvetic-font
+	font-family: helvetic-font,sans-serif
+
+body
+	background-color: #ffffff
+	background-image: url(../img/pattern-bg.png)
+	background-size: 50px
+	background-position: 50%
+	+helvetic-font
+	font-size: 12px
+	font-weight: 1.5
+	color: $text-color
+	font-weight: 400
+
+	+r($screen-lg)
+		background-image: none
+
+cite
+	font-style: normal
+
+img
+	max-width: 100%;
+
+.container
+	max-width: 960px
+	margin: 0 auto
+	padding: 0 10px
+
+	+r($screen-lg)
+		margin: 0 5px
+
+.visually-hidden
+    position: absolute
+    width: 1px
+    height: 1px
+    margin: -1px
+    border: 0
+    padding: 0
+    clip: rect(0 0 0 0)
+    overflow: hidden
+
