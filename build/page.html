@@ -13,11 +13,14 @@
     <div class="out">
       <!-- begin header-page -->
       <header class="header-page">
-        <div class="container">
+        <div class="container  header-page__container">
           <div class="header-page__wrap">
             <a class="header-page__logo  logo" href="#">
               <img class="logo__pic" width="87" height="34" src="img/logo.png" alt="Logo JETRO"> </a>
-            <nav class="header-page__nav  main-nav">
+            <div id="nav-trigger" class="nav-trigger">
+              <span class="nav-trigger__line"></span>
+            </div>
+            <nav class="header-page__nav  main-nav" id="nav">
               <ul class="main-nav__list">
                 <li class="main-nav__item">
                   <a class="main-nav__link" href="#">HOME</a>
@@ -48,8 +51,12 @@
         <div class="container">
           <div class="main__wrap">
             <section class="main__content">
-              <h2 class="visually-hidden">Blog Posts</h2>
-              <article class="main__posts  article  article--slider">
+              <article class="main__posts  article">
+                <!-- begin article__decor -->
+                <div class="article__decor">
+                  <div class="article__icon" style="background-image: url(../img/icon-photo.png);"></div>
+                </div>
+                <!-- end article__decor -->
                 <!-- begin slider -->
                 <div class="article__media  slider">
                   <div class="slider__next">
@@ -63,30 +70,30 @@
                     </svg>
                   </div>
                   <div class="slider__slides js-hero">
-                    <div class="slider__slide slide" style="background: url(img/slide.jpg) center center / cover"> </div>
-                    <div class="slider__slide slide" style="background: url(img/slide.jpg) center center / cover"> </div>
-                    <div class="slider__slide slide" style="background: url(img/slide.jpg) center center / cover"> </div>
+                    <a class="slider__slide slide" href="#" style="background: url(img/slide.jpg) center center / cover"> </a>
+                    <a class="slider__slide slide" href="#" style="background: url(img/slide.jpg) center center / cover"> </a>
+                    <a class="slider__slide slide" href="#" style="background: url(img/slide.jpg) center center / cover"> </a>
                   </div>
                 </div>
                 <!-- end slider -->
                 <!-- begin article__descr -->
-                <div class="article__detail">
-                  <dl class="article__info">
-                    <dt class="article__info-title">Date</dt>
-                    <dd class="article__info-descr">
-                      <time class="article__time" datetime="2015-04-15">April 15, 2012</time>
+                <div class="article__detail  js-animated">
+                  <dl class="article__info  info-block">
+                    <dt class="info-block__title">Date</dt>
+                    <dd class="info-block__descr">
+                      <time class="info-block__time" datetime="2015-04-15">April 15, 2012</time>
                     </dd>
-                    <dt class="article__info-title">Tags</dt>
-                    <dd class="article__info-descr  tag">
-                      <a class="article__info-tag  tag__link" href="#">Website</a>
-                      <a class="article__info-tag  tag__link" href="#">Design</a>
+                    <dt class="info-block__title">Tags</dt>
+                    <dd class="info-block__descr  tag">
+                      <a class="info-block__tag  tag__link" href="#">Website</a>
+                      <a class="info-block__tag  tag__link" href="#">Design</a>
                     </dd>
-                    <dt class="article__info-title">Comments</dt>
-                    <dd class="article__info-descr">4</dd>
+                    <dt class="info-block__title">Comments</dt>
+                    <dd class="info-block__descr">4</dd>
                   </dl>
                   <div class="article__descr">
-                    <a href="#" class="article__link">
-                      <h3 class="article__title"> Top WordPress Themes of 2012 </h3>
+                    <a class="article__link  title-info" href="#">
+                      <h3 class="title-info__text"> Top WordPress Themes of 2012 </h3>
                     </a>
                     <div class="article__text">
                       <p>Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide
@@ -98,31 +105,36 @@
                 </div>
                 <!-- end article__descr -->
               </article>
-              <article class="main__posts  article  article--news">
+              <article class="main__posts  article">
+                <!-- begin article__decor -->
+                <div class="article__decor">
+                  <div class="article__icon" style="background-image: url(../img/icon-news.png);"></div>
+                </div>
+                <!-- end article__decor -->
                 <!-- begin video -->
                 <div class="article__media">
-                  <a href="#" class="article__link  news-img">
+                  <a href="#" class="news-img">
                     <img src="img/news.jpg" width="670" height="300" alt="Jesus  Typography  Wallpaper  Giveaway!"> </a>
                 </div>
                 <!-- end video -->
                 <!-- begin article__detail -->
-                <div class="article__detail">
-                  <dl class="article__info">
-                    <dt class="article__info-title">Date</dt>
-                    <dd class="article__info-descr">
-                      <time class="article__time" datetime="2015-04-15">April 15, 2012</time>
+                <div class="article__detail  js-animated">
+                  <dl class="article__info  info-block">
+                    <dt class="info-block__title">Date</dt>
+                    <dd class="info-block__descr">
+                      <time class="info-block__time" datetime="2015-04-15">April 15, 2012</time>
                     </dd>
-                    <dt class="article__info-title">Tags</dt>
-                    <dd class="article__info-descr  tag">
-                      <a class="article__info-tag  tag__link" href="#">Website</a>
-                      <a class="article__info-tag  tag__link" href="#">Design</a>
+                    <dt class="info-block__title">Tags</dt>
+                    <dd class="info-block__descr  tag">
+                      <a class="info-block__tag  tag__link" href="#">Website</a>
+                      <a class="info-block__tag  tag__link" href="#">Design</a>
                     </dd>
-                    <dt class="article__info-title">Comments</dt>
-                    <dd class="article__info-descr">4</dd>
+                    <dt class="info-block__title">Comments</dt>
+                    <dd class="info-block__descr">4</dd>
                   </dl>
                   <div class="article__descr">
-                    <a href="#" class="article__link">
-                      <h3 class="article__title"> Top WordPress Themes of 2012 </h3>
+                    <a class="article__link  title-info" href="#">
+                      <h3 class="title-info__text"> Jesus Typography Wallpaper Giveaway! </h3>
                     </a>
                     <div class="article__text">
                       <p>Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide
@@ -134,30 +146,35 @@
                 </div>
                 <!-- end article__detail -->
               </article>
-              <article class="main__posts  article  article--video">
-                <!-- begin video -->
-                <div class="article__media  video-responsive">
-                  <iframe class="video-responsive__iframe" src="https://player.vimeo.com/video/798022" allowfullscreen frameborder="0"></iframe>
+              <article class="main__posts  article">
+                <!-- begin article__decor -->
+                <div class="article__decor">
+                  <div class="article__icon" style="background-image: url(../img/icon-video.svg);"></div>
                 </div>
-                <!-- end video -->
+                <!-- end article__decor -->
+                <!-- begin video-responsive -->
+                <div class="article__media  video-responsive">
+                  <iframe class="video-responsive__iframe" src="https://player.vimeo.com/video/798022" allowfullscreen frameborder="0" width="670" height="300"></iframe>
+                </div>
+                <!-- end video-responsive -->
                 <!-- begin article__descr -->
-                <div class="article__detail">
-                  <dl class="article__info">
-                    <dt class="article__info-title">Date</dt>
-                    <dd class="article__info-descr">
-                      <time class="article__time" datetime="2015-04-15">April 15, 2012</time>
+                <div class="article__detail  js-animated">
+                  <dl class="article__info  info-block">
+                    <dt class="info-block__title">Date</dt>
+                    <dd class="info-block__descr">
+                      <time class="info-block__time" datetime="2015-04-15">April 15, 2012</time>
                     </dd>
-                    <dt class="article__info-title">Tags</dt>
-                    <dd class="article__info-descr  tag">
-                      <a class="article__info-tag  tag__link" href="#">Website</a>
-                      <a class="article__info-tag  tag__link" href="#">Design</a>
+                    <dt class="info-block__title">Tags</dt>
+                    <dd class="info-block__descr  tag">
+                      <a class="info-block__tag  tag__link" href="#">Website</a>
+                      <a class="info-block__tag  tag__link" href="#">Design</a>
                     </dd>
-                    <dt class="article__info-title">Comments</dt>
-                    <dd class="article__info-descr">4</dd>
+                    <dt class="info-block__title">Comments</dt>
+                    <dd class="info-block__descr">4</dd>
                   </dl>
                   <div class="article__descr">
-                    <a href="#" class="article__link">
-                      <h3 class="article__title"> Big Buck Bunny Trailer </h3>
+                    <a class="article__link  title-info" href="#">
+                      <h3 class="title-info__text"> Big Buck Bunny Trailer </h3>
                     </a>
                     <div class="article__text">
                       <p>Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide
@@ -169,27 +186,34 @@
                 </div>
                 <!-- end article__descr -->
               </article>
-              <article class="main__posts  article  article--quote">
+              <article class="main__posts  article  js-animated">
+                <!-- begin article__decor -->
+                <div class="article__decor">
+                  <div class="article__icon" style="background-image: url(../img/icon-quote-white.svg);"></div>
+                </div>
+                <!-- end article__decor -->
                 <h3 class="visually-hidden">Write anything you want here in this quotable area</h3>
-                <a href="#" class="article__link">
-                  <!-- begin quote -->
-                  <blockquote class="article__media  quote"> Write anything you want here in this quotable area. Something unique you want people to learn about your website or some cool random fact. Its totally up to you. </blockquote>
-                  <!-- end quote -->
-                </a>
+                <!-- begin quote -->
+                <blockquote class="quote">
+                  <a class="quote__text" href="#"> Write anything you want here in this quotable area. Something unique you want people to learn about your website or some cool random fact. Its totally up to you. </a>
+                </blockquote>
+                <!-- end quote -->
               </article>
-              <article class="main__posts  article  article--link">
-                <div class="article__descr">
-                  <a href="#" class="article__link">
-                    <h3 class="article__title"> Top WordPress Themes of 2012 </h3>
+              <article class="main__posts  article  js-animated">
+                <!-- begin article__decor -->
+                <div class="article__decor">
+                  <div class="article__icon" style="background-image: url(../img/icon-link.png);"></div>
+                </div>
+                <!-- end article__decor -->
+                <div class="article__descr  article__descr--full">
+                  <a class="article__link  article__link--cite  title-info" href="#">
+                    <h3 class="title-info__text"> Some of the best freebies on the web </h3>
                   </a>
                   <a href="http://www.asimovonline.com" class="article__cite" target="_blank">
-                    <cite>http://www.asimovonline.com</cite>
+                    <cite>www.bestpsdfreebies.com</cite>
                   </a>
                   <div class="article__text">
-                    <p>Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide
-                      instructior. Mei no latine praesent forensibus, te sed habemus tacimates, ad ipsum officiis constituto usu.</p>
-                    <p>Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posuere ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis
-                      ...</p>
+                    <p>Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei.</p>
                   </div>
                 </div>
               </article>
@@ -204,13 +228,14 @@
                   <a href="" class="pagination__link">3</a>
                 </li>
               </ul>
+              <h2 class="visually-hidden">Blog Posts</h2>
             </section>
             <aside class="main__aside  aside">
-              <section class="aside__sect">
+              <section class="aside__sect  js-animated">
                 <h2 class="aside__title  title-sect">AbouT Jetro</h2>
                 <div class="aside__descr"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praese nt libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elemen tum imperdiet. Duis sagittis ipsum. </div>
               </section>
-              <section class="aside__sect">
+              <section class="aside__sect  js-animated">
                 <h2 class="aside__title  title-sect">Categories</h2>
                 <ul class="categories">
                   <li class="categories__item">
@@ -233,33 +258,85 @@
                   </li>
                 </ul>
               </section>
-              <section class="aside__sect">
+              <section class="aside__sect  js-animated">
                 <h2 class="aside__title  title-sect">Photo Gallery</h2>
                 <div class="thumbs">
+                  <div class="thumbs__btn-wrap">
+                    <div class="thumbs__btn  thumbs__btn--prev">
+                      <svg class="icon icon-arrow">
+                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="thumbs__btn  thumbs__btn--next">
+                      <svg class="icon icon-arrow">
+                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                      </svg>
+                    </div>
+                  </div>
                   <ul class="thumbs__list">
                     <li class="thumbs__item">
-                      <a class="thumbs__link" href="#" style="background: url(img/gallery.jpg) center center / cover"></a>
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_1_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_1.jpg" width="50" height="50" alt="thumbs"> </a>
                     </li>
                     <li class="thumbs__item">
-                      <a class="thumbs__link" href="#" style="background: url(img/gallery.jpg) center center / cover"></a>
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_2_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_2.jpg" width="50" height="50" alt="thumbs"> </a>
                     </li>
                     <li class="thumbs__item">
-                      <a class="thumbs__link" href="#" style="background: url(img/gallery.jpg) center center / cover"></a>
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_1_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_1.jpg" width="50" height="50" alt="thumbs"> </a>
                     </li>
                     <li class="thumbs__item">
-                      <a class="thumbs__link" href="#" style="background: url(img/gallery.jpg) center center / cover"></a>
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_2_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_2.jpg" width="50" height="50" alt="thumbs"> </a>
                     </li>
                     <li class="thumbs__item">
-                      <a class="thumbs__link" href="#" style="background: url(img/gallery.jpg) center center / cover"></a>
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_2_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_2.jpg" width="50" height="50" alt="thumbs"> </a>
                     </li>
                     <li class="thumbs__item">
-                      <a class="thumbs__link" href="#" style="background: url(img/gallery.jpg) center center / cover"></a>
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_1_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_1.jpg" width="50" height="50" alt="thumbs"> </a>
                     </li>
                     <li class="thumbs__item">
-                      <a class="thumbs__link" href="#" style="background: url(img/gallery.jpg) center center / cover"></a>
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_2_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_2.jpg" width="50" height="50" alt="thumbs"> </a>
                     </li>
                     <li class="thumbs__item">
-                      <a class="thumbs__link" href="#" style="background: url(img/gallery.jpg) center center / cover"></a>
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_1_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_1.jpg" width="50" height="50" alt="thumbs"> </a>
+                    </li>
+                    <li class="thumbs__item">
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_1_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_1.jpg" width="50" height="50" alt="thumbs"> </a>
+                    </li>
+                    <li class="thumbs__item">
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_1_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_1.jpg" width="50" height="50" alt="thumbs"> </a>
+                    </li>
+                    <li class="thumbs__item">
+                      <a class="thumbs__link  js-popup" href="img/gallery/thumbs_1_big.jpg" title="thumbs">
+                        <img src="img/gallery/thumbs_1.jpg" width="50" height="50" alt="thumbs"> </a>
+                    </li>
+                    <li class="thumbs__item">
+                      <a class="thumbs__link">
+                        <img src="img/gallery.jpg" width="50" height="50"> </a>
+                    </li>
+                    <li class="thumbs__item">
+                      <a class="thumbs__link">
+                        <img src="img/gallery.jpg" width="50" height="50"> </a>
+                    </li>
+                    <li class="thumbs__item">
+                      <a class="thumbs__link">
+                        <img src="img/gallery.jpg" width="50" height="50"> </a>
+                    </li>
+                    <li class="thumbs__item">
+                      <a class="thumbs__link">
+                        <img src="img/gallery.jpg" width="50" height="50"> </a>
+                    </li>
+                    <li class="thumbs__item">
+                      <a class="thumbs__link">
+                        <img src="img/gallery.jpg" width="50" height="50"> </a>
                     </li>
                   </ul>
                 </div>

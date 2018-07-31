@@ -1,3 +1,13 @@
+// font-family + style
+=font-style($alias, $name, $style)
+  @font-face
+    font-family: $alias
+    src: url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".woff") format("woff")
+    font-weight: normal
+    font-style: $style
+    font-display: swap
+
+
 // width
 =r($width)
   @media only screen and (max-width: $width+ "px")

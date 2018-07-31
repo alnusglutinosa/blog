@@ -2,14 +2,20 @@
 	position: relative
 	background-color: $color--important
 
+	&.js-loaded
+    	&:before, &:after
+    		width: 100%
+    		transition: width 3s
+
 	&:before, &:after
 		content: ""
 		position: absolute
 		top: 0
-		width: 1000px
+		width: 0
 		height: 100%
 		background: $color--important
 		opacity: 0.5
+		width: 0
 
 		+r($screen-lg)
 			display: none
@@ -34,12 +40,27 @@
 .header-page
 	overflow: hidden
 
+	&__container
+		+r($screen-lg)
+			padding: 0
+
 	&__wrap
-	    display: flex
-	    flex-wrap: wrap
-	    align-items: center
-	    padding: 20px 0
-	    text-align: left
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		padding: 20px 0
+		text-align: left
+
+		+r(959)
+			position: fixed
+			left: 0
+			top: 0
+			height: 60px
+			z-index: 9999
+			padding: 10px
+			width: 100%
+			background: #fff
+			box-shadow: 0 2px 7px 0px rgba(0,0,0,.2)
 
 	&__logo
 		flex-shrink: 0
@@ -58,12 +79,53 @@
 		max-width: 100%
 
 .main-nav
+	+r(959)
+		// display: none
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 100
+		width: 100%
+		height: 100%
+		font-size: 1rem
+		opacity: 0
+		transition: opacity 6s
+
+		&.is-open
+			opacity: 1
+			transition: background 3s, opacity 1s
+
+			.main-nav__item
+				transform: translateY(0)
+				opacity: 1
+
 	&__list
 		display: flex
 		flex-wrap: wrap
 
+		+r(959)
+			position: absolute
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			height: 100%
+			width: 100%
+
 	&__item
 		padding-top: 5px
+
+		+r(959)
+			position: relative
+			display: flex
+			flex-grow: 1
+			align-items: center
+			width: 100%
+			background: #222
+			color: #fff
+			text-align: center
+			border-bottom: 1px solid #796868
+			transform: translateY(300%)
+			opacity: 0
 
 		&:last-child .main-nav__link
 			padding-right: 0
@@ -84,6 +146,25 @@
 		&:hover
 			color: $color--important
 
+		+r(959)
+			flex-grow: 1
+			font-size: 2.5em
+
+		+r(767)
+			font-size: 2em
+
+		+r(480)
+			font-size: 1.5em
+
+
+@for $i from 1 through 5
+	.main-nav .main-nav__item:nth-child(#{$i})
+		transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) (0.2s*$i), opacity 0.5s linear (0.2s*$i)
+
+@for $i from 1 through 5
+	.main-nav.is-open .main-nav__item:nth-child(#{$i})
+		transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) (0.1s*$i), opacity 0.5s linear (0.1s*$i)
+
 .main
 	&__wrap
 		display: flex
@@ -102,9 +183,17 @@
 			padding-right: 0
 
 	&__posts
-		margin-bottom: 56px
+		margin-bottom: 46px
 		padding-bottom: 44px
 
+		&:first-child
+			.article__media
+				margin-top: 0
+
+
+
+		+r($screen-lg)
+			padding-bottom: 25px
 
 	&__aside
 		width: 230px
@@ -130,6 +219,7 @@
 			margin-bottom: 0
 
 .title-sect
+	position: relative
 	display: flex
 	padding-top: 2px
 	text-transform: uppercase
@@ -138,23 +228,23 @@
 	line-height: 1
 	font-weight: normal
 	color: $color--important
+	user-select: none
 
 	&:after
 		content: ""
-		background: #ffffff
 		flex: 1
 		margin-left: 19px
 		background: url(../img/pattern.png) 0 0
 
-
 .slider
 	position: relative
+	overflow: hidden
 
 	&__next,&__prev
 		position: absolute
 		top: 50%
 		left: 20px
-		z-index: 100
+		z-index: 99
 		margin-top: -27px
 		font-size: 54px
 		cursor: pointer
@@ -168,6 +258,7 @@
 .slide
 	position: relative
 	height: 0
+	overflow: hidden
 	padding-bottom: 44.8%
 
 	&__title
@@ -186,8 +277,21 @@
 .article
 	position: relative
 
-	&::before
+	&::after
 		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 98.6%
+		height: 13px
+		background: url(../img/pattern.png) 0 0
+
+	&__decor
+		+r($screen-lg)
+			margin-bottom: 10px
+			background-color: rgba($color--important-light, 0.5)
+
+	&__icon
 		position: absolute
 		right: 100%
 		top: 0
@@ -199,88 +303,60 @@
 		background-position: center
 		background-repeat: no-repeat
 
-		+r($screen-lg)
+		+r(1115)
 			position: relative
 			right: auto
 			display: block
 
-	&::after
-		content: ""
-		position: absolute
-		left: 0
-		bottom: 0
-		width: 98.6%
-		height: 13px
-		background: url(../img/pattern.png) 0 0;
-
 	&__media
+		margin-top: 55px
 		margin-bottom: 17px
+
+	&__link
+		display: block
+		margin-top: 3px
+		margin-bottom: 19px
+
+		&--cite
+			margin-bottom: 5px
+
 
 	&__detail
 		display: flex
+
+		+r($screen-lg)
+			flex-wrap: wrap
 
 	&__info
 		width: 22%
 		padding-right: 15px
 
+		+r($screen-lg)
+			width: 100%
+			padding-right: 0
+			order: 1
+
 	&__descr
 		width: 78%
+
+		+r($screen-lg)
+			width: 100%
+
+		&--full
+			width: 100%
 
 	&__text
 		p
 			margin-bottom: 17px
-
-	&__link
-		display: block
-		color: $text-color
-		text-decoration: none
-
-		&:hover
-			.article__title
-				opacity: 0.5
-
-	&__title
-		margin-top: 3px
-		margin-bottom: 19px
-		+bebas-font
-		font-size: 18px
-		line-height: 1
-		font-weight: 500
-		text-transform: uppercase
-		color: $color--important
 
 	&__text
 		font-size: 12px
 		line-height: 1.5
 		padding-right: 12px
 
-	&__info-title
-		margin-bottom: 4px
-		+bebas-font
-		font-size: 12px
-		line-height: 1.66
-		color: $color--important
-		text-transform: uppercase
-
-	&__info-descr
-		display: block
-		margin-bottom: 9px
-		font-size: 12px
-		line-height: 1.66
-		color: $text-color--lighten
-
-	&__info-tag
-		position: relative
-		padding-right: 7px
-		color: $text-color--lighten
-		text-decoration: none
-
-		&:hover
-			text-decoration: underline
-
 	&__cite
 		display: block
-		margin-bottom: 6px
+		margin-bottom: 19px
 		font-size: 12px
 		line-height: 1.5
 		color: $text-color--light
@@ -289,26 +365,50 @@
 		&:hover
 			text-decoration: underline
 
-	&--slider
-		&::before
-			background-image: url(../img/icon-photo.png)
+.title-info
+	display: block
+	color: $color--important
+	text-decoration: none
 
-	&--news
-		&::before
-			background-image: url(../img/icon-news.png)
+	&:hover
+		.title-info__text
+			opacity: 0.5
 
-	&--video
-		&::before
-			background-image: url(../img/icon-video.svg)
+	&__text
+		+bebas-font
+		font-size: 18px
+		line-height: 1
+		font-weight: 500
+		text-transform: uppercase
+		color: currentColor
 
-	&--quote
-		&::before
-			background-image: url(../img/icon-quote-white.svg)
-			background-size: 34%
+.info-block
+	&__title
+		margin-bottom: 4px
+		+bebas-font
+		font-size: 12px
+		line-height: 1.66
+		color: $color--important
+		text-transform: uppercase
 
-	&--link
-		&::before
-			background-image: url(../img/icon-link.png)
+	&__descr
+		display: block
+		margin-bottom: 9px
+		font-size: 12px
+		line-height: 1.66
+		color: $text-color--lighten
+
+	&__tag
+		position: relative
+		padding-right: 15px
+		color: $text-color--lighten
+		text-decoration: none
+
+		&_last-child
+			padding-right: 0
+
+		&:hover
+			text-decoration: underline
 
 .tag
 	&__link
@@ -317,7 +417,7 @@
 		&::before
 			content: "|"
 			position: absolute
-			right: 0
+			right: 6px
 			bottom: 0
 
 		&:last-child
@@ -326,12 +426,10 @@
 
 .quote
 	position: relative
+	margin-bottom: 26px
 	padding: 21px 15px 20px 76px
-	font-size: 13px
-	line-height: 1.38
-	color: $quote-color
 	background-color: $quote-bg
-	background-image: url(../img/pattern-quote.png);
+	background-image: url(../img/pattern-quote.png)
 
 	&::before
 		content: ""
@@ -344,6 +442,13 @@
 		background-position: center
 		background-repeat: no-repeat
 
+	&__text
+		font-style: italic
+		font-size: 13px
+		line-height: 1.38
+		color: $quote-color
+		text-decoration: none
+
 .pagination
 	display: flex
 
@@ -355,7 +460,7 @@
 		line-height: 30px
 		text-transform: uppercase
 		color: #ffffff
-		background: $color--important-lighten
+		background: $color--important-light
 
 		&.is-active
 			background: $color--important
@@ -366,35 +471,69 @@
 		color: #ffffff
 		text-decoration: none
 
+
 .thumbs
+	overflow: hidden
+	position: relative
+	margin-right: -6px
+
+	&__btn-wrap
+		display: flex
+		margin-bottom: 5px
+
+	&__btn
+		display: flex
+		width: 24px
+		margin-right: 4px
+		padding: 5px
+		background-color: $color--important
+		cursor: pointer
+
+		&.slick-disabled
+			opacity: 0.5
+
+		.icon-arrow
+			width: 100%
+
+		&--next
+			transform: rotate(-180deg)
+
 	&__list
-		display: grid
-		grid-template-columns: repeat(4,1fr)
-		grid-gap: 7px
-
-		+r(620)
-			grid-template-columns: repeat(2,1fr)
-
-	&__item
-		border: 1px solid $color--important
-
+		display: flex
+		position: relative
+		flex-wrap: wrap
+		width: 100%
 
 	&__link
 		display: block
-		height: 0
-		padding-bottom: 100%
+		margin-right: 6px
+		margin-bottom: 3px
+		border: 1px solid $color--important
+		transition: opacity $anim
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+		&[href]:hover
+			border-color: #f3af9d
+			opacity: 0.8
 
 .categories
 	&__link
+		display: block
 		color: $text-color--dark
 		text-decoration: none
+		transition: transform $anim
 
 		&:hover
 			text-decoration: underline
+			transform: translateX(2%)
 
 .video-responsive
 	padding: 0
-	padding-bottom: 56.25%
+	padding-bottom: 45%
 	position: relative
 	display: block
 	height: 0
@@ -409,6 +548,73 @@
 		height: 100%
 		border: 0
 
-
 .footer-page
 	padding: 20px
+
+.js-animated
+	+rmin(960)
+		transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, opacity 0.8s linear 0.1s
+		transform: translate3d(0px, 80px, 0)
+		opacity: 0
+
+		&.appeared
+			transform: translate3d(0px, 0px, 0px) rotateX(0) scale(1, 1)
+			opacity: 1
+
+.nav-trigger
+	display: none
+	position: fixed
+	width: 36px
+	height: 36px
+	right: 0px
+	top: 0px
+	z-index: 200
+	margin: 5px 10px 5px
+	color: $color--important
+	cursor: pointer
+
+	+r(959)
+		display: block
+
+	&.is-active
+
+		.nav-trigger__line
+			background-color: transparent
+
+			&::before
+				transform: translateY(0) rotate(45deg)
+
+			&::after
+				transform: translateY(0) rotate(-45deg)
+
+	&__line
+		content: ""
+		position: absolute
+		right: 0
+		top: 0
+		bottom: 0
+		left: 0
+		margin: auto
+		height: 3px
+		width: 100%
+		background-color: currentColor
+		transition: transform $anim, opacity $anim
+
+		&::before, &::after
+			content: ""
+			position: absolute
+			right: 0
+			top: 0
+			bottom: 0
+			left: 0
+			margin: auto
+			height: 3px
+			width: 100%
+			background-color: currentColor
+			transition: transform $anim, opacity $anim
+
+		&::before
+			transform: translateY(-10px)
+
+		&::after
+			transform: translateY(10px)
