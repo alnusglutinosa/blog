@@ -69,6 +69,7 @@
     "webpack-glsl-loader": "^1.0.1"
   },
   "dependencies": {
+    "gsap": "^2.0.1",
     "magnific-popup": "^1.1.0",
     "slick-carousel": "^1.8.1"
   }

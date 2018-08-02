@@ -1,3 +1,5 @@
+import 'gsap';
+import './lib/gsap.js';
 import sayHello from './lib/sayHello.js';
 import show_menu from './lib/show_menu.js';
 import './lib/appear_lib.js';
@@ -7,15 +9,31 @@ import 'magnific-popup';
 
 sayHello();
 
-// Плавное появление текста
-if (window.matchMedia('(min-width: 960px)').matches) {
-  appear();
-}
-
-
 // animation on load
 $(window).on('load', function() {
-  $('.main-title').addClass('js-loaded');
+
+  // начать повторы preloader
+  var timerId = setInterval(function() {
+    $('.preloader').toggleClass('is-blog');
+  }, 1200);
+
+  setTimeout(function() {
+    $('.preloader').fadeOut(500), setTimeout(function() {
+      $('body').addClass('is-load');
+
+      // остановить повторы preloader
+      clearInterval(timerId);
+    }, 500);
+
+    // Плавное появление текста
+    if (window.matchMedia('(min-width: 960px)').matches) {
+      appear();
+    }
+
+    $('.main-title').addClass('js-loaded');
+  }, 8000);
+
+  // $('.main-title').addClass('js-loaded');
   show_menu();
 });
 
@@ -73,9 +91,8 @@ $(document).ready(function() {
     } else {
       setTimeout(function() {
         $('.main-nav').show();
-      },1200);
+      },1400);
     }
   });
 
 });
-

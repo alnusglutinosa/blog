@@ -1,0 +1,84 @@
+{% set articles = [
+  {
+    icon_decor: "img/icon-photo.png",
+    is_media: "true",
+    slider:  ["img/slide/slide_1.jpg","img/slide/slide_2.jpg","img/slide/slide_1.jpg"],
+    show_detail: "true",
+    show_info: "true",
+    title: "Top  WordPress  Themes  of  2012",
+
+    text_news_1: "Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide instructior. Mei no latine praesent forensibus, te sed habemus tacimates, ad ipsum officiis constituto usu.",
+
+    text_news_2: "Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posuere ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis  ..."
+  },
+  {
+    icon_decor: "img/icon-news.png",
+    is_media: "true",
+    image: "img/news.jpg",
+    show_detail: "true",
+    show_info: "true",
+    title: "Jesus  Typography  Wallpaper  Giveaway!",
+
+    text_news_1: "Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide instructior. Mei no latine praesent forensibus, te sed habemus tacimates, ad ipsum officiis constituto usu.",
+
+    text_news_2: "Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posuere ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis  ..."
+  },
+  {
+    icon_decor: "img/icon-video.svg",
+    is_media: "true",
+    video: "https://player.vimeo.com/video/798022",
+    show_detail: "true",
+    show_info: "true",
+    title: "Big  Buck  Bunny  Trailer",
+
+    text_news_1: "Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide instructior. Mei no latine praesent forensibus, te sed habemus tacimates, ad ipsum officiis constituto usu.",
+
+    text_news_2: "Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posuere ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis  ..."
+  },
+  {
+    title: "Write anything you want here in this quotable area",
+    icon_decor: "img/icon-quote-white.svg",
+    quote: "Write anything you want here in this quotable area. Something unique you want people to learn
+      about your website or some cool random fact. Its totally up to you."
+  },
+  {
+    icon_decor: "img/icon-link.png",
+    title: "Some  of  the  best  freebies  on  the  web",
+    show_detail: "true",
+    cite_link: "http://www.asimovonline.com",
+    cite_text: "www.bestpsdfreebies.com",
+
+    text_news_1: "Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide instructior. Mei no latine praesent forensibus, te sed habemus tacimates, ad ipsum officiis constituto usu."
+  }
+  ]
+%}
+
+
+<div class="container">
+  <div class="main__wrap">
+    <section class="main__content">
+
+      {% for article in articles %}
+        {% include "partials/_article.html" %}
+      {% endfor %}
+
+      <ul class="pagination">
+        <li class="pagination__item  is-active">
+          <a href="" class="pagination__link">1</a>
+        </li>
+        <li class="pagination__item">
+          <a href="" class="pagination__link">2</a>
+        </li>
+        <li class="pagination__item">
+          <a href="" class="pagination__link">3</a>
+        </li>
+      </ul>
+
+      <h2 class="visually-hidden">Blog Posts</h2>
+
+    </section>
+
+     {% include "partials/_aside.html" %}
+
+  </div>
+</div>

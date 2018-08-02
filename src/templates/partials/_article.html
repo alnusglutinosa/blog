@@ -1,0 +1,139 @@
+<!-- begin article -->
+<article class="main__posts  article">
+
+  <!-- begin article__decor -->
+  <div class="article__decor">
+    <div class="article__icon" style="background-image: url({{article.icon_decor}});"></div>
+  </div>
+  <!-- end article__decor -->
+
+  {% if article.is_media %}
+
+    <div class="article__media">
+
+      {% if article.slider %}
+
+        <!-- begin slider -->
+        <div class="article__media  slider">
+          <div class="slider__next">{{mixins.icon('arrow')}}</div>
+          <div class="slider__prev">{{mixins.icon('arrow')}}</div>
+          <div class="slider__slides js-hero">
+
+            {% for slide in article.slider %}
+              <a class="slider__slide slide" href="#" style="background: url({{slide}}) center center / cover">
+            </a>
+            {% endfor %}
+
+          </div>
+        </div>
+        <!-- end slider -->
+
+      {% endif %}
+
+      {% if article.image %}
+
+        <!-- begin news-img -->
+        <a href="#" class="news-img">
+          <img src="{{article.image}}" width="670" height="300" alt="Jesus  Typography  Wallpaper  Giveaway!">
+        </a>
+        <!-- end news-img -->
+
+      {% endif %}
+
+      {% if article.video %}
+
+        <!-- begin video-responsive -->
+        <div class="video-responsive">
+          <iframe  class="video-responsive__iframe" src="{{article.video}}" allowfullscreen frameborder="0"  width="670" height="300"></iframe>
+        </div>
+        <!-- end video-responsive -->
+
+      {% endif %}
+
+    </div>
+
+  {% endif %}
+
+
+  {% if article.show_detail %}
+
+    <!-- begin article__detail -->
+    <div class="article__detail  js-animated">
+
+      {% if article.show_info %}
+
+        <div class="article__info">
+          <dl class="info-block">
+            <dt class="info-block__title">Date</dt>
+            <dd class="info-block__descr">
+              <time class="info-block__time" datetime="2015-04-15">April 15, 2012</time>
+            </dd>
+          </dl>
+
+          <dl class="info-block">
+            <dt class="info-block__title">Tags</dt>
+            <dd class="info-block__descr  tag">
+              <a class="info-block__tag  tag__link" href="#">Website</a>
+              <a class="info-block__tag  tag__link" href="#">Design</a>
+            </dd>
+          </dl>
+
+          <dl class="info-block">
+            <dt class="info-block__title">Comments</dt>
+            <dd class="info-block__descr">4</dd>
+          </dl>
+        </div>
+
+      {% endif %}
+
+      <div class="article__descr">
+        <a class="article__link  title-info" href="#">
+          <h3 class="title-info__text">
+            {{article.title}}
+          </h3>
+        </a>
+
+
+        {% if article.cite %}
+          <a href="{{article.link}}" class="article__cite" target="_blank">
+            <cite>{{article.cite}}</cite>
+          </a>
+        {% endif %}
+
+
+        <div class="article__text">
+
+          {% if article.text_news_1 %}
+            <p>{{article.text_news_1}}</p>
+          {% endif %}
+
+          {% if article.text_news_2 %}
+            <p>{{article.text_news_2}}</p>
+          {% endif %}
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- end article__detail -->
+
+  {% endif %}
+
+
+  {% if article.quote %}
+
+    <h3 class="visually-hidden">{{article.title}}</h3>
+
+    <!-- begin quote -->
+    <blockquote class="quote">
+      <a class="quote__text" href="#">
+        {{article.quote}}
+      </a>
+    </blockquote>
+    <!-- end quote -->
+
+  {% endif %}
+
+</article>
+<!-- end article -->
