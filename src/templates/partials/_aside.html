@@ -27,12 +27,12 @@
     },
     {
       img_min: "img/gallery/thumbs_2.jpg",
-      img: "img/gallery/thumbs_1_big.jpg",
+      img: "img/gallery/thumbs_2_big.jpg",
       title: "thumbs 4"
     },
     {
       img_min: "img/gallery/thumbs_2.jpg",
-      img: "img/gallery/thumbs_1_big.jpg",
+      img: "img/gallery/thumbs_2_big.jpg",
       title: "thumbs 5"
     },
     {
@@ -42,7 +42,7 @@
     },
     {
       img_min: "img/gallery/thumbs_2.jpg",
-      img: "img/gallery/thumbs_1_big.jpg",
+      img: "img/gallery/thumbs_2_big.jpg",
       title: "thumbs 7"
     },
     {
@@ -104,7 +104,7 @@
     <ul class="categories">
 
       {% for categ in categories %}
-        <li class="categories__item"><a href="#" class="categories__link">{{categ.title}} {{categ.count}}</a></li>
+        <li class="categories__item"><a href="#" class="categories__link">{{categ.title}} ({{categ.count}})</a></li>
       {% endfor %}
 
     </ul>

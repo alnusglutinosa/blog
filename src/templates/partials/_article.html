@@ -86,17 +86,17 @@
 
       {% endif %}
 
-      <div class="article__descr">
-        <a class="article__link  title-info" href="#">
+      <div class="article__descr  {% if article.full %} article__descr--full {% endif %}">
+        <a class="article__link {% if article.full %} article__link--cite {% endif %}  title-info" href="#">
           <h3 class="title-info__text">
             {{article.title}}
           </h3>
         </a>
 
 
-        {% if article.cite %}
+        {% if article.cite_link %}
           <a href="{{article.link}}" class="article__cite" target="_blank">
-            <cite>{{article.cite}}</cite>
+            <cite>{{article.cite_text}}</cite>
           </a>
         {% endif %}
 
